@@ -1,0 +1,165 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 100px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color: lightcyan;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .route-button {
+    margin-bottom: 20px;
+  } 
+
+  .menu {
+    float: left;
+  }
+  .content {
+    float: left;
+  }
+  .menu .btn {
+    margin: 10px 0;
+  }
+
+  .menu-btn {
+    width: 120px;
+  }
+
+  .side-menu {
+    width: 250px;
+    height: 100%;
+    background-color: lightblue;
+    position: fixed;    
+    top: 0;
+    left: 0;
+  }
+.warning{
+    color: red;
+}
+.form-group{
+    display: flex;
+}
+.align-center{
+    text-align: center;
+}
+.login-a{
+        padding: 15px;
+}
+.align-right{
+    text-align: right;
+}
+.btn-size{
+    min-width: 170px;
+}
+.btn{
+    background: #3B9ACD  ;
+     border-color: #3B9ACD  ;
+     color: white;
+}
+.btn:hover{
+    background: #3B9ACD  ;
+}
+.no-booking{
+        padding-top: 5%;
+    text-align: center;
+    height: 233px;
+}
+.cancel-booking{
+        width: 113px;
+    font-size: 1em;
+    margin-top: -3%;
+}
+.btn:disabled{
+    cursor: not-allowed;
+}
+.container {
+    max-width: 100% !important;
+}
+.data-part{
+    border-left: 1px solid lightblue;
+        padding-left: 4%;
+        min-height: 500px;
+}
+.litenary{
+    display: flex;
+}
+.header-label-div{
+    border-bottom: 1px solid lightblue;
+    color: lightcoral;
+        padding-left: 0px;
+}
+.button-part{
+        /*border-right: 1px solid lightblue;*/
+            padding-top: 35vh;
+                min-height: 75vh;
+                    text-align: center;
+}
+.sub-div{
+        border: 1px solid lightblue;
+            border-radius: 20px;
+    margin-top: 3%;
+}
+.dining{
+        margin-top: 3%;
+}
+.details-div{
+        display: flex;
+    margin-top: 3%;
+        margin-bottom: 2%;
+}
+.item{
+    padding-left: 0px;
+    padding-right: 0px;
+        font-size: 0.8em;
+}
+.itinerary-button{
+        margin: 10px;
+}
+.itinerary-button:disabled{
+    background: gray;
+    border-color: gray;
+}
+.new-home-head{
+     text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    display: flex;
+}
+.r-dropdown{
+        background: #3B9ACD;
+    color: white;
+    width: 90%;
+        padding: 2%;
+    border-radius: 4px;
+}
+.zero-padding{
+    padding: 0px;
+}
+.calender-icon{
+        position: absolute;
+    z-index: 1;
+    margin-left: 86%;
+    margin-top: 11px;
+}

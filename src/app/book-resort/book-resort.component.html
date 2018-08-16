@@ -1,0 +1,88 @@
+<div class="col-md-12 col-sm-12 new-home-head">
+  <div class="col-md-6 col-sm-6">
+    <h2 class="mx-auto"> Book Resort</h2>
+  </div>
+  <div class="col-md-5 col-sm-5 login-a">
+    Welcome {{guest.firstName}} &nbsp;{{guest.lastName}} !
+  </div>
+  <div class="col-md-1 col-sm-1 login-a"> <a routerLink="/login">Logout</a></div>
+</div>
+<div class="data-part">
+  <div class="col-md-12 col-sm-12 header-label-div">
+    <h3 class="mx-auto" style="width: 1000px;">Welcome to Capgemini Resort</h3>
+  </div>
+  <form class="bookResortForm" [formGroup]="bookResortForm" (ngSubmit)="book()">
+    <div class="col-md-12 col-sm-12 form-group login-detail-margin">
+      <div class="col-sm-2">
+        <label for="roomType"><b>Room Type</b></label>
+      </div>
+      <div class="col-sm-3">
+        <select class="r-dropdown" formControlName="roomType">
+  <option default value="standarad">Standarad</option>
+  <option value="deluxe">Deluxe</option>
+  <option value="suite">Suite</option>
+</select>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 form-group login-detail-margin checkdates">
+      <div class="col-sm-3 ">
+        <label for="checkIn"><b>CheckIn</b></label>
+        <div class="input-group">
+          <i class="fa fa-calendar calender-icon" aria-hidden="true"></i>
+          <input class="form-control" formControlName="checkIn" (click)="e.toggle()" placeholder="yyyy-mm-dd" [minDate]="minDate" name="CheckIn"
+            ngbDatepicker #e="ngbDatepicker" (ngModelChange)="getDate()">
+          <!--<div class="input-group-append">
+            <button class="btn btn-outline-secondary"  type="button">
+                        <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </button>
+          </div>-->
+        </div>
+      </div>
+      <div class="col-sm-3 ">
+        <label for="checkout"><b>Checkout</b></label>
+        <div class="input-group" for="checkOut">
+          <!--<input class="form-control" formControlName="checkOut" placeholder="yyyy-mm-dd" [minDate]="minDate" name="CheckOut" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                        <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </button>
+          </div>-->
+          <i class="fa fa-calendar calender-icon" aria-hidden="true"></i>
+          <input class="form-control" formControlName="checkOut" (click)="d.toggle()" placeholder="yyyy-mm-dd" [minDate]="checkinDate"
+            name="CheckOut" ngbDatepicker #d="ngbDatepicker">
+          <!--<div class="input-group-append">
+            <button class="btn btn-outline-secondary"  type="button">
+                        <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </button>
+          </div>-->
+        </div>
+      </div>
+       <!--<div class="col-sm-2 guest-div">
+        <label class="guest-label" for="nights">Nights</label>
+        <select class="n-dropdown" formControlName="nights">
+                   <option default disabled >Select Nights</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+   <option value="4">4</option>
+</select>
+      </div>-->
+      <div class="col-sm-3 guest-div">
+        <label class="guest-label" for="numberOfGuests">NUMBER OF GUESTS</label>
+        <select class="n-dropdown" formControlName="numberOfGuests">
+                   <option default disabled >Select Guests</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+   <option value="4">4</option>
+</select>
+      </div>
+
+    </div>
+    <div class="col-md-12 col-sm-12 align-right" style="margin-top: 11%;">
+      <input style='margin-left:16px' type="reset" class="btn  btn-size" ng-click="reset()" value="Reset">
+      <input style='margin-left:16px' type="submit" class="btn btn-size" value="Book" [disabled]="!bookResortForm.valid">
+
+    </div>
+  </form>
+</div>

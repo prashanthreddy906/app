@@ -1,0 +1,19 @@
+.bookResortForm{
+  margin-top:4%;
+}
+.n-dropdown{
+     padding: 9px;
+    width: 91%;
+    border-radius: 4px;
+    border-color: gainsboro;
+    font-size: 0.7em;
+}
+.guest-label{
+  font-size: 0.8em;
+}
+.checkdates{
+    margin-top: 6%;
+}
+.guest-div{
+      margin-top: 3px;
+}

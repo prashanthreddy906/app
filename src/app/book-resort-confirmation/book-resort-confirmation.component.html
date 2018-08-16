@@ -1,0 +1,47 @@
+ <div class="col-md-12 col-sm-12 new-home-head">
+    <div class="col-md-7 col-sm-7">
+      <h2 class="mx-auto"> Resort Reservation Confirmation</h2>
+    </div>
+    <div class="col-md-4 col-sm-4 login-a">
+      Welcome {{guest.firstName}} &nbsp;{{guest.lastName}} !
+    </div>
+    <div class="col-md-1 col-sm-1 login-a"> <a routerLink="/login">Logout</a></div>
+  </div>
+  <div class="data-part">
+ <div class="col-md-12 col-sm-12 header-label-div">
+        <h3 class="mx-auto" style="width: 1000px;">Your reservation is confirmed at Capgemini Resort.</h3>
+      </div>
+      <div  class="col-md-12 col-sm-12 ">
+        <div  class="col-md-12 col-sm-12 sub-div">
+          <div class="col-md-12 col-sm-12 details-div">
+            <div class="col-md-3 col-sm-3 item ">
+             Reservation #: {{resort.rReservationNumber}}
+            </div>
+            <div class="col-md-3 col-sm-3 item">
+              Room Type: {{resort.roomType}}
+            </div>
+            <div class="col-md-3 col-sm-3 item ">
+             Number of guests: {{resort.noOfPeople}}
+            </div>
+            <div class="col-md-3 col-sm-3 item ">
+              Status: {{resort.status}}
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 details-div">
+            <div class="col-md-3 col-sm-3 item ">
+              Arrival Date: {{resort.arrivalDate}}
+            </div>
+            <div class="col-md-3 col-sm-3 item ">
+              Departure Date: {{resort.departureDate}}
+            </div>
+            <div class="col-md-3 col-sm-3 item ">
+              &nbsp;
+            </div>
+            <div class="col-md-3 col-sm-3 item ">
+               <button class="btn btn-primary cancel-booking" [disabled]="resort.status!='booked'" (click)="cancelResort(resort.rReservationNumber)"> Cancel Booking</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </div>

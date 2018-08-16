@@ -1,0 +1,69 @@
+<div class="col-md-12 col-sm-12 new-home-head">
+  <div class="col-md-6 col-sm-6">
+    <h2 class="mx-auto"> Book Dining</h2>
+  </div>
+  <div class="col-md-5 col-sm-5 login-a">
+    Welcome {{guest.firstName}} &nbsp;{{guest.lastName}} !
+  </div>
+  <div class="col-md-1 col-sm-1 login-a"> <a routerLink="/login">Logout</a></div>
+</div>
+<div class="data-part">
+  <div class="col-md-12 col-sm-12 header-label-div">
+    <h3 class="mx-auto" style="width: 1000px;">Welcome to Capgemini Fine Dining Restaurant</h3>
+  </div>
+  <form class="bookDiningForm" [formGroup]="bookDiningForm" (ngSubmit)="book()">
+    <div class="col-md-12 col-sm-12 form-group login-detail-margin">
+      <div class="col-sm-2">
+        <label for="diningType"><b>Dining Type</b></label>
+      </div>
+      <div class="col-sm-3">
+        <select class="r-dropdown" formControlName="diningType">
+  <option default value="breakfast">Breakfast</option>
+  <option value="lunch">Lunch</option>
+  <option value="dinner">Dinner</option>
+</select>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 form-group login-detail-margin checkdates">
+      <div class="col-sm-4">
+        <label for="date"><b>Select A Date</b></label>
+        <div class="input-group">
+          <i class="fa fa-calendar calender-icon" aria-hidden="true"></i>
+          <input class="form-control" formControlName="date" (click)="e.toggle()" placeholder="yyyy-mm-dd" [minDate]="minDate" name="CheckIn"
+            ngbDatepicker #e="ngbDatepicker">
+          <!--<div class="input-group-append">
+            <button class="btn btn-outline-secondary"  type="button">
+                        <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </button>
+          </div>-->
+        </div>
+      </div>
+      <div class="col-sm-4 guest-div">
+        <label class="guest-label" for="numberOfGuests">NUMBER OF GUESTS</label>
+        <select class="n-dropdown" formControlName="numberOfGuests">
+                   <option default disabled >Select Guests</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+   <option value="4">4</option>
+</select>
+      </div>
+      <div class="col-sm-4 guest-div">
+        <label class="guest-label" for="time">Time</label>
+        <select class="n-dropdown" formControlName="time" >
+                   <option default disabled >Select time</option>
+                    <option value="7am-11am">Breakfast (7am-11am)</option>
+  <option value="2">Lunch (12pm-3pm)</option>
+  <option value="3">Snacks (4pm-6pm)</option>
+   <option value="4">Dinner (7pm-11pm)</option>
+</select>
+      </div>
+
+    </div>
+    <div class="col-md-12 col-sm-12 align-right" style="margin-top: 11%;">
+      <input style='margin-left:16px' type="reset" class="btn  btn-size" ng-click="reset()" value="Reset">
+      <input style='margin-left:16px' type="submit" class="btn btn-size" value="Book" [disabled]="!bookDiningForm.valid">
+
+    </div>
+  </form>
+</div>

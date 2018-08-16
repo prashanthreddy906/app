@@ -1,0 +1,66 @@
+<!--<h1 class="mx-auto" style="width: 1000px;">Login Page</h1>
+ <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="mx-auto" style="width: 1000px;">
+    <div class="form-group">
+    <label for="email">Email</label>
+      <div class="col-sm-5">
+      <input
+          type="text"
+          class="form-control"
+          formControlName="email">
+      </div>
+     <div *ngIf="loginForm.controls['email'].touched && !loginForm.controls['email'].valid">  
+     <span *ngIf="loginForm.controls['email'].hasError('required') ">  
+           Email ID is needed  
+             </span>  
+      <span *ngIf="loginForm.controls['email'].hasError('email') ">  
+           Invalid Email ID  
+            </span>             
+    </div>
+  </div>
+    <div class="form-group">
+   <label for="password">Password</label>
+      <div class="col-sm-5">
+   <input
+   type="password"
+  class="form-control"
+  formControlName="password">
+</div>
+</div> 
+    <div class="row" >
+<div style='margin-left:16px' > <a  routerLink="/register"  class="btn btn-primary" >New User?Register</a></div>
+<div   style='margin-left:16px'>  <input type="submit" class="btn btn-primary" value="LOGIN" ng-click=onsubmit()></div>
+    </div>
+    </div>
+</form>-->
+<div class="row">
+    <div class="col-md-12 col-sm-12 login-header">
+        <h2 class="mx-auto" style="width: 1000px;">Login Page</h2>
+    </div>
+     <form [formGroup]="loginForm" class="loginForm">
+          <div *ngIf="isFailed" class="col-md-12 col-sm-12 login-warning">
+    <span class="warning" >  
+          Warning message:</span> Username/password is not valid 
+    </div>
+    <div class="col-md-12 col-sm-12 form-group login-detail-margin">
+            <div class="col-sm-2">
+                <label for="email">Email</label>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+    </div>
+    <div class="col-md-12 col-sm-12 form-group login-detail-margin">
+            <div class="col-sm-2">
+                <label for="password">Password</label>
+            </div>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+    </div>
+    <div class="col-md-12 col-sm-12">
+<button class="btn  new-register btn-size" routerLink="/register">New User?Register</button>
+<button class="btn  btn-size" (click)="login()">LOGIN</button>
+    </div>
+    </form>
+</div>

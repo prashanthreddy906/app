@@ -1,0 +1,23 @@
+<!--<div class="jumbotron">
+    <div class="container">
+        <div class="col-sm-8 col-sm-offset-2">
+            <demo></demo>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>-->
+<div class="container" *ngIf="singlepage">
+     <router-outlet></router-outlet>        
+</div>
+<div class="container"  *ngIf="!singlepage">
+  <div class="col-md-12 col-sm-12 litenary">
+    <div class="col-md-3 col-sm-3 button-part">
+      <a [routerLink]="['/BookResort']"> <button class="btn  btn-size itinerary-button" [disabled]="isSelected('BookResort')"> Book Resort</button>  </a>
+      <a [routerLink]="['/BookDining']"><button class="btn  btn-size itinerary-button" [disabled]="isSelected('BookDining')">Book Dining</button>  </a>
+      <a [routerLink]="['/ViewItinerary']"> <button class="btn btn-size itinerary-button" [disabled]="isSelected('ViewItinerary')">View Itinerary</button>  </a>
+    </div>
+    <div class="col-md-9 col-sm-9 ">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  </div>
